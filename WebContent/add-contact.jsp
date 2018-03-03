@@ -17,7 +17,7 @@
         <h1>Add contacts</h1>
         <hr />
 
-        <form action="addContactViaJsp" method="post">
+        <form action="addContact" method="post">
             Name : <input type="text" name="name" /><br />
             E-mail : <input type="text" name="email" /><br />
             Address : <input type="text" name="address" /><br />

@@ -19,7 +19,7 @@ import vn.edu.vnuk.record.dao.ContactDao;
 import vn.edu.vnuk.record.model.Contact;
 
 @SuppressWarnings("serial")
-@WebServlet("/addContactViaJsp")
+@WebServlet("/addContact")
 public class AddContact extends HttpServlet {
 	
 	/**
