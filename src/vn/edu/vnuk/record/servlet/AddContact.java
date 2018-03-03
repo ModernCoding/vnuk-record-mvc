@@ -20,7 +20,7 @@ import vn.edu.vnuk.record.model.Contact;
 
 @SuppressWarnings("serial")
 @WebServlet("/addContactViaJsp")
-public class AddContactViaJspServlet extends HttpServlet {
+public class AddContact extends HttpServlet {
 	
 	/**
 	 * 
