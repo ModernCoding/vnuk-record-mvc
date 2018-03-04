@@ -1,3 +1,3 @@
 <img src="images/banner.jpg" />
-<h2>Recording contacts</h2>
+<h2>My contacts</h2>
 <hr />

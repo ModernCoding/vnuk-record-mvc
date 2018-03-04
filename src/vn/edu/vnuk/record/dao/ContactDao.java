@@ -20,6 +20,10 @@ public class ContactDao {
         this.connection = new ConnectionFactory().getConnection();
     }
 
+    public ContactDao(Connection connection){
+        this.connection = connection;
+    }
+
 
     //  CREATE
     public void create(Contact contact) throws SQLException{
