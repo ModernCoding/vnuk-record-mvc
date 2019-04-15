@@ -23,6 +23,7 @@ import vn.edu.vnuk.record.mvc.logic.Logic;
 @WebServlet("/mvc")
 public class ControllerServlet extends HttpServlet {
     
+	@SuppressWarnings("deprecation")
 	@Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String parameter = request.getParameter("logic");
@@ -31,7 +32,7 @@ public class ControllerServlet extends HttpServlet {
         try {
             @SuppressWarnings("rawtypes")
 			Class classe = Class.forName(className);
-            Logic logic = (Logic) classe.newInstance();
+			Logic logic = (Logic) classe.newInstance();
             String page = logic.run(request, response);
             request.getRequestDispatcher(page).forward(request, response);
         } 

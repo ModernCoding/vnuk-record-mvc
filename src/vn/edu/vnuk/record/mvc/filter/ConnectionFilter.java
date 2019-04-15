@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vn.edu.vnuk.record.filter;
+package vn.edu.vnuk.record.mvc.filter;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,7 +17,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-import vn.edu.vnuk.record.jdbc.ConnectionFactory;
+import vn.edu.vnuk.record.mvc.jdbc.ConnectionFactory;
 
 /**
  *

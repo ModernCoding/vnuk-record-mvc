@@ -1,7 +1,6 @@
-package vn.edu.vnuk.record.servlet;
+package vn.edu.vnuk.record.mvc.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,12 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vn.edu.vnuk.record.dao.ContactDao;
-import vn.edu.vnuk.record.model.Contact;
+import vn.edu.vnuk.record.mvc.dao.ContactDao;
+import vn.edu.vnuk.record.mvc.model.Contact;
 
 @SuppressWarnings("serial")
 @WebServlet("/addContact")
-public class AddContact extends HttpServlet {
+public class AddContactServlet extends HttpServlet {
 	
 	/**
 	 * 
@@ -29,8 +28,10 @@ public class AddContact extends HttpServlet {
 			HttpServletResponse response)
 			throws IOException, ServletException {
 		
-		//	seeking writer
-		PrintWriter out = response.getWriter();
+		request.setCharacterEncoding ("UTF-8");
+	    response.setCharacterEncoding ("UTF-8");
+	    response.setContentType ("text / html; charset = UTF-8");
+	    
 		
 		//	finding parameters in the request form
 		String name = request.getParameter("name");
@@ -48,7 +49,7 @@ public class AddContact extends HttpServlet {
 		} 
 		
 		catch (ParseException e) {
-			out.println("Error while converting date");
+			response.getWriter().println("Error while converting date");
 			return;
 		}
 		

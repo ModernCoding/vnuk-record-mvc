@@ -10,7 +10,7 @@ import java.sql.Connection;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vn.edu.vnuk.record.dao.ContactDao;
+import vn.edu.vnuk.record.mvc.dao.ContactDao;
 import vn.edu.vnuk.record.mvc.logic.Logic;
 
 /**

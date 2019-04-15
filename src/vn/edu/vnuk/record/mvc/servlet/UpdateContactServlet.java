@@ -1,4 +1,4 @@
-package vn.edu.vnuk.record.servlet;
+package vn.edu.vnuk.record.mvc.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vn.edu.vnuk.record.dao.ContactDao;
-import vn.edu.vnuk.record.model.Contact;
+import vn.edu.vnuk.record.mvc.dao.ContactDao;
+import vn.edu.vnuk.record.mvc.model.Contact;
 
 @SuppressWarnings("serial")
 @WebServlet("/updateContact")

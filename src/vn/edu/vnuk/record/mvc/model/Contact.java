@@ -1,4 +1,4 @@
-package vn.edu.vnuk.record.model;
+package vn.edu.vnuk.record.mvc.model;
 
 import java.util.Calendar;
 
