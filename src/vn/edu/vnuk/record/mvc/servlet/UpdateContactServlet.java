@@ -73,7 +73,7 @@ public class UpdateContactServlet extends HttpServlet {
                     e.printStackTrace();
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/mvc?logic=contact.Show&id=" + id);
+		RequestDispatcher rd = request.getRequestDispatcher("/mvc?action=contact.Show&id=" + id);
                 rd.forward(request,response);
 		
 	}

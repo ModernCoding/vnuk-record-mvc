@@ -1,9 +1,14 @@
+<%@ page language="java"
+	contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <c:import url="../body-open.jsp" />
 
-    <a href="mvc?logic=contact.Create" class="btn btn-primary">Create a new contact</a>
+    <a href="mvc?action=contact.Create" class="btn btn-primary">Create a new contact</a>
     <br/>
     <br/>
 
@@ -26,8 +31,8 @@
 
                 <tr>
                     <td>
-                        <a href="mvc?logic=contact.Show&id=${contact.id}" class="btn btn-xs btn-default">Show</a>
-                        <a href="mvc?logic=contact.Delete&id=${contact.id}" class="btn btn-xs btn-danger">Delete</a>
+                        <a href="mvc?action=contact.Show&id=${contact.id}" class="btn btn-xs btn-default">Show</a>
+                        <a href="mvc?action=contact.Delete&id=${contact.id}" class="btn btn-xs btn-danger">Delete</a>
                     </td>
                     <td>${contact.id}</td>
                     <td>${contact.name}</td>

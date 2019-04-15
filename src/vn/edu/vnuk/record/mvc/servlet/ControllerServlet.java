@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vn.edu.vnuk.record.mvc.logic.Logic;
+import vn.edu.vnuk.record.mvc.action.Action;
 
 /**
  *
@@ -26,19 +26,19 @@ public class ControllerServlet extends HttpServlet {
 	@SuppressWarnings("deprecation")
 	@Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String parameter = request.getParameter("logic");
-        String className = "vn.edu.vnuk.record.mvc.logic." + parameter;
+        String parameter = request.getParameter("action");
+        String className = "vn.edu.vnuk.record.mvc.action." + parameter;
         
         try {
             @SuppressWarnings("rawtypes")
 			Class classe = Class.forName(className);
-			Logic logic = (Logic) classe.newInstance();
+			Action logic = (Action) classe.newInstance();
             String page = logic.run(request, response);
             request.getRequestDispatcher(page).forward(request, response);
         } 
         
         catch (Exception e) {
-            throw new ServletException("Something went wrong with the Logic !", e);
+            throw new ServletException("Something went wrong with the action!", e);
         }
     }
     

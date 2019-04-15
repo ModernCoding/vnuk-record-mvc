@@ -11,7 +11,7 @@
     
     <br/>
     
-    <a href="mvc?logic=contact.Index" class="btn btn-default">Back to list</a>
-    <a href="mvc?logic=contact.Update&id=${contact.id}" class="btn btn-primary">Modify</a>
+    <a href="mvc?action=contact.Index" class="btn btn-default">Back to list</a>
+    <a href="mvc?action=contact.Update&id=${contact.id}" class="btn btn-primary">Modify</a>
         
 <c:import url="../body-close.jsp" />

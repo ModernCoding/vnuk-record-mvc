@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vn.edu.vnuk.record.mvc.logic;
+package vn.edu.vnuk.record.mvc.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author michel
  */
-public class FirstLogic implements Logic {
+public class FirstAction implements Action {
 
     @Override
     public String run(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        System.out.println("Running Logic and redirecting ...");
-        return "first-logic.jsp";
+        System.out.println("Running Action and redirecting ...");
+        return "first-action.jsp";
     }
     
 }

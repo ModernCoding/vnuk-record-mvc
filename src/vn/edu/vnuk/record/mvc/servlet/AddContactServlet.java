@@ -70,7 +70,7 @@ public class AddContactServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		// RequestDispatcher rd = request.getRequestDispatcher("/mvc?logic=contact.Index");
+		// RequestDispatcher rd = request.getRequestDispatcher("/mvc?action=contact.Index");
 		RequestDispatcher rd = request.getRequestDispatcher("/contact-added.jsp");
         rd.forward(request,response);
 		
