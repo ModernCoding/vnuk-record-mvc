@@ -39,7 +39,7 @@
             
         	<div>
         		<label for="date-of-birth">Date of birth: </label>
-            	<vnuk:myDateField name="date_of_birth" id="date-of-birth" />
+            	<vnuk:myDateField param_name="date_of_birth" id="date-of-birth" />
             </div>
             
             
