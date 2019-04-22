@@ -1,7 +1,6 @@
 package vn.edu.vnuk.record.mvc.servlet.contact;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,11 +27,13 @@ public class Update extends HttpServlet {
 			HttpServletResponse response)
 			throws IOException, ServletException {
 		
-		//	seeking writer
-		PrintWriter out = response.getWriter();
+		request.setCharacterEncoding ("UTF-8");
+	    response.setCharacterEncoding ("UTF-8");
+	    response.setContentType ("text / html; charset = UTF-8");
+	    
 		
 		//	finding parameters in the request form
-                int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String email = request.getParameter("email");
@@ -48,7 +49,7 @@ public class Update extends HttpServlet {
 		} 
 		
 		catch (ParseException e) {
-			out.println("Error while converting date");
+			response.getWriter().println("Error while converting date");
 			return;
 		}
 		

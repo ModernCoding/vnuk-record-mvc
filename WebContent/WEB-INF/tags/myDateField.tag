@@ -8,8 +8,13 @@
 
 <%@ attribute name="id" required="true" %>
 <%@ attribute name="param_name" required="true" %>
+<%@ attribute name="label" required="true" %>
 
-<input id="${id}" name="${param_name}" />
+<div>
+	<label for="${id}">${label}</label>
+   	<input type="text" name="${param_name}" id="${id}">
+</div>
+
 
 <script>
     $("#${id}").datepicker({dateFormat: 'dd/mm/yy'});

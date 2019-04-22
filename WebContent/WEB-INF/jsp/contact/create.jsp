@@ -1,4 +1,10 @@
+<%@ page language="java"
+	contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib tagdir="/WEB-INF/tags" prefix="vnuk" %>
 
 <c:import url="../body-open.jsp" />
 
@@ -6,10 +12,12 @@
         <hr />
 
         <form action="addContact" method="post">
-            Name : <input type="text" name="name" /><br />
-            E-mail : <input type="text" name="email" /><br />
-            Address : <input type="text" name="address" /><br />
-            Date of birth : <input type="text" name="date_of_birth" id="date_of_birth" /><br />
+            <vnuk:myInput param_name="name" id="name" label="Name: " />
+            <vnuk:myInput param_name="email" id="email" label="E-mail: " />
+            <vnuk:myInput param_name="address" id="address" label="Address: " />
+            <vnuk:myInput param_name="date_of_birth" id="date-of-birth" label="Date of birth: " />
+            
+            <a href="mvc?action=contact.Index" class="btn btn-light">Back to list</a>
             <input type="submit" value="Save" class="btn btn-success" />
         </form>
         
@@ -17,7 +25,7 @@
         <c:import url="../scripts.jsp" />
         
         <script>
-            $("#date_of_birth").datepicker({dateFormat: 'dd/mm/yy'});
+            $("#date-of-birth").datepicker({dateFormat: 'dd/mm/yy'});
         </script>
 
     </body>
