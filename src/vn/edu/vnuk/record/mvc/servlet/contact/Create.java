@@ -1,4 +1,4 @@
-package vn.edu.vnuk.record.mvc.servlet;
+package vn.edu.vnuk.record.mvc.servlet.contact;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ import vn.edu.vnuk.record.mvc.model.Contact;
 
 @SuppressWarnings("serial")
 @WebServlet("/addContact")
-public class AddContactServlet extends HttpServlet {
+public class Create extends HttpServlet {
 	
 	/**
 	 * 
@@ -70,8 +70,8 @@ public class AddContactServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		// RequestDispatcher rd = request.getRequestDispatcher("/mvc?action=contact.Index");
-		RequestDispatcher rd = request.getRequestDispatcher("/contact-added.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/mvc?action=contact.Index");
+//		RequestDispatcher rd = request.getRequestDispatcher("/contact-added.jsp");
         rd.forward(request,response);
 		
 	}

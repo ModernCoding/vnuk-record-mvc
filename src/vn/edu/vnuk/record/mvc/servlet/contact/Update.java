@@ -1,4 +1,4 @@
-package vn.edu.vnuk.record.mvc.servlet;
+package vn.edu.vnuk.record.mvc.servlet.contact;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,7 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +19,7 @@ import vn.edu.vnuk.record.mvc.model.Contact;
 
 @SuppressWarnings("serial")
 @WebServlet("/updateContact")
-public class UpdateContactServlet extends HttpServlet {
+public class Update extends HttpServlet {
 	
 	/**
 	 * 
@@ -73,8 +72,7 @@ public class UpdateContactServlet extends HttpServlet {
                     e.printStackTrace();
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/mvc?action=contact.Show&id=" + id);
-                rd.forward(request,response);
+		request.getRequestDispatcher(String.format("/mvc?action=contact.Show&id=%s", id)).forward(request,response);
 		
 	}
 	

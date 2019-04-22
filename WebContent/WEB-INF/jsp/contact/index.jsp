@@ -8,11 +8,9 @@
 
 <c:import url="../body-open.jsp" />
 
-    <a href="mvc?action=contact.Create" class="btn btn-primary">Create a new contact</a>
-    <br/>
-    <br/>
+    <a href="mvc?action=contact.Create" class="btn btn-xs btn-success my-margin-bottom-19">Create a new contact</a>
 
-    <table class="table table-bordered table-responsive table-striped table-hover">
+    <table>
 
         <thead>
             <tr>
@@ -27,11 +25,16 @@
 
         <tbody>
 
-            <c:forEach var="contact" items="${contacts}">
+            <c:forEach var="contact" items="${contacts}" varStatus="index">
 
-                <tr>
+                <tr class="my-tr-${index.count % 2 == 0 ? 'red' : 'gold' }">
                     <td>
-                        <a href="mvc?action=contact.Show&id=${contact.id}" class="btn btn-xs btn-default">Show</a>
+                        <a href="mvc?action=contact.Show&id=${contact.id}" class="btn btn-xs btn-light">Show</a>
+                        
+                        <a href="mvc?action=contact.Update&id=${contact.id}&back=list" class="btn btn-xs btn-primary">
+                        	Update
+                        </a>
+                        
                         <a href="mvc?action=contact.Delete&id=${contact.id}" class="btn btn-xs btn-danger">Delete</a>
                     </td>
                     <td>${contact.id}</td>
