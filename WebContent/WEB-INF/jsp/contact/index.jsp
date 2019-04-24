@@ -14,7 +14,9 @@
 			<em>List of all contacts</em>
 		</h3>
 	
-	    <a href="mvc?action=contact.Create" class="btn btn-xs btn-success my-margin-bottom-19">Create a new contact</a>
+	    <a href="mvc?action=contact.New" class="btn btn-xs btn-success my-margin-bottom-19">
+	    	Create a new contact
+	    </a>
 	
 	    <table>
 	
@@ -37,7 +39,7 @@
 	                    <td>
 	                        <a href="mvc?action=contact.Show&id=${contact.id}" class="btn btn-xs btn-light">Show</a>
 	                        
-	                        <a href="mvc?action=contact.Update&id=${contact.id}&back=list" class="btn btn-xs btn-primary">
+	                        <a href="mvc?action=contact.Edit&id=${contact.id}&back=list" class="btn btn-xs btn-primary">
 	                        	Update
 	                        </a>
 	                        

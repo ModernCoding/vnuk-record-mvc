@@ -14,7 +14,7 @@
 			<em>Edit ${contact.name}</em>
 		</h3>
 
-        <form action="updateContact" method="post">
+        <form action="mvc?action=contact.Update" method="post">
             <div>Id: ${contact.id}</div>
             <input type="hidden" name="id" value="${contact.id}" />
             
@@ -23,7 +23,14 @@
             <vnuk:input name="address" id="address" label="Address: " value="${contact.address}" />
             
             <fmt:formatDate var="formattedDateOfBirth" value="${contact.dateOfBirth.time}" pattern="dd/MM/yyyy" />
-            <vnuk:input name="date_of_birth" id="date-of-birth" label="Date of birth: " value="${formattedDateOfBirth}" />
+            
+            <vnuk:input
+            	name="date_of_birth"
+            	id="date-of-birth"
+            	label="Date of birth: "
+            	value="${formattedDateOfBirth}"
+            	autocomplete="off"
+            />
             
             
             <c:choose>

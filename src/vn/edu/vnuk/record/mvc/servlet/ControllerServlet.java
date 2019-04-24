@@ -23,9 +23,14 @@ import vn.edu.vnuk.record.mvc.action.Action;
 @WebServlet("/mvc")
 public class ControllerServlet extends HttpServlet {
     
-	@SuppressWarnings("deprecation")
 	@Override
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@SuppressWarnings("deprecation")
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding ("UTF-8");
+	    response.setCharacterEncoding ("UTF-8");
+	    response.setContentType ("text / html; charset = UTF-8");
+	    
         String parameter = request.getParameter("action");
         String className = "vn.edu.vnuk.record.mvc.action." + parameter;
         

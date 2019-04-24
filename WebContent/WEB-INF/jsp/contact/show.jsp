@@ -25,7 +25,7 @@
 	    
 	    <a href="mvc?action=contact.Index" class="btn btn-light">Back to list</a>
 	    
-	    <a href="mvc?action=contact.Update&id=${contact.id}&back=detail" class="btn btn-primary">
+	    <a href="mvc?action=contact.Edit&id=${contact.id}&back=detail" class="btn btn-primary">
 	    	Modify
 	    </a>
 	        
