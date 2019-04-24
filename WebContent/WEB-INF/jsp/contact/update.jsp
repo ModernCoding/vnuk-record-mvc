@@ -7,22 +7,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="vnuk" %>
 
-<c:import url="../body-open.jsp" />
+<vnuk:layout>
+	<jsp:attribute name="template">
 
-        <h1>Modify contact</h1>
-        <hr />
+		<h3 class="my-margin-bottom-28">
+			<em>Edit ${contact.name}</em>
+		</h3>
 
         <form action="updateContact" method="post">
             <div>Id: ${contact.id}</div>
             <input type="hidden" name="id" value="${contact.id}" />
+            
             <vnuk:input name="name" id="name" label="Name: " value="${contact.name}" />
             <vnuk:input name="email" id="email" label="E-mail: " value="${contact.email}" />
             <vnuk:input name="address" id="address" label="Address: " value="${contact.address}" />
             
-			<div>
-				<label for="date-of-birth">Date of birth: </label>
-			   	<input type="text" name="date_of_birth" id="date-of-birth" value=<fmt:formatDate value="${contact.dateOfBirth.time}" pattern="dd/MM/yyyy" />>
-			</div>
+            <fmt:formatDate var="formattedDateOfBirth" value="${contact.dateOfBirth.time}" pattern="dd/MM/yyyy" />
+            <vnuk:input name="date_of_birth" id="date-of-birth" label="Date of birth: " value="${formattedDateOfBirth}" />
+            
             
             <c:choose>
             	<c:when test="${ param.back == 'list' }">
@@ -36,14 +38,6 @@
     		
     		<input type="submit" value="Update" class="btn btn-success" />
         </form>
-        
-        <c:import url="../footer.jsp" />
-        <c:import url="../scripts.jsp" />
-        
-        <script>
-            $("#date-of-birth").datepicker({dateFormat: 'dd/mm/yy'});
-        </script>
-
-    </body>
-
-</html>
+	        
+	</jsp:attribute>
+</vnuk:layout>

@@ -4,12 +4,15 @@
 %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib tagdir="/WEB-INF/tags" prefix="vnuk" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="vnuk" %>
 
-<c:import url="../body-open.jsp" />
+<vnuk:layout>
+	<jsp:attribute name="template">
 
-        <h1>Add contacts</h1>
-        <hr />
+		<h3 class="my-margin-bottom-28">
+			<em>Add a new contact</em>
+		</h3>
 
         <form action="addContact" method="post">
             <vnuk:input name="name" id="name" label="Name: " />
@@ -20,14 +23,6 @@
             <a href="mvc?action=contact.Index" class="btn btn-light">Back to list</a>
             <input type="submit" value="Save" class="btn btn-success" />
         </form>
-        
-        <c:import url="../footer.jsp" />
-        <c:import url="../scripts.jsp" />
-        
-        <script>
-            $("#date-of-birth").datepicker({dateFormat: 'dd/mm/yy'});
-        </script>
-
-    </body>
-
-</html>
+	        
+	</jsp:attribute>
+</vnuk:layout>
