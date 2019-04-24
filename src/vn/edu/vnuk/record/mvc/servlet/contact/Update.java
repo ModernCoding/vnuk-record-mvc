@@ -33,7 +33,7 @@ public class Update extends HttpServlet {
 	    
 		
 		//	finding parameters in the request form
-        int id = Integer.parseInt(request.getParameter("id"));
+        Long id = Long.parseLong(request.getParameter("id"));
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String email = request.getParameter("email");

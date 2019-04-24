@@ -32,16 +32,13 @@ public class RunningTimeFilter implements Filter {
         long finalTime = System.currentTimeMillis();
         
         String uri = ((HttpServletRequest)request).getRequestURI();
-        String parameter = ((HttpServletRequest) request).getParameter("logic");
+        String parameter = ((HttpServletRequest) request).getParameter("action");
         
-        System.out.println(
-                "Running " 
-                + uri
-                + "?logic="
-                + parameter + " took "
-                + (finalTime - initialTime)
-                + " ms."
-        );
+        String loggingMessage = parameter != null ?
+        	String.format("Running %s?action=%s took %sms.", uri, parameter, finalTime - initialTime):
+        	String.format("Running %s took %sms.", uri, finalTime - initialTime);
+        
+        System.out.println(loggingMessage);
         
     }
 

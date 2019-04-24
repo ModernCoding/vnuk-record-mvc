@@ -14,12 +14,11 @@ import vn.edu.vnuk.record.mvc.action.Action;
  *
  * @author michel
  */
-public class Create implements Action {
+public class New implements Action {
 
     @Override
     public String run(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-        return "/WEB-INF/jsp/contact/create.jsp";
+        return "/WEB-INF/jsp/contact/new.jsp";
     }
     
 }

@@ -23,7 +23,7 @@ import vn.edu.vnuk.record.mvc.jdbc.ConnectionFactory;
  *
  * @author michel
  */
-@WebFilter("/*")
+@WebFilter("/mvc")
 public class ConnectionFilter implements Filter{
 
     @Override
@@ -35,10 +35,12 @@ public class ConnectionFilter implements Filter{
         
         try {
             Connection connection = new ConnectionFactory().getConnection();
+            System.out.println("Connection is open");
 
             request.setAttribute("myConnection", connection);
             chain.doFilter(request, response);
             connection.close();
+            System.out.println("Connection is closed");
         } 
         
         catch (SQLException e) {

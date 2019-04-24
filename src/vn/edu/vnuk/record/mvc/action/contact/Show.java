@@ -23,12 +23,12 @@ public class Show implements Action {
     public String run(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         request.setAttribute(
-        	"contact", 
+        	"contact",
+        	
         	new ContactDao(
         			(Connection) request.getAttribute("myConnection")
-        		).read(Integer.parseInt(request.getParameter("id")))
+        		).read(Long.parseLong(request.getParameter("id")))
     	);
-    	//request.setAttribute("contact", new ContactDao().read(Integer.parseInt(request.getParameter("id"))));
         
         return "/WEB-INF/jsp/contact/show.jsp";
     }

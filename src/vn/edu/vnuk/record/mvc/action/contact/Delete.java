@@ -5,12 +5,13 @@
  */
 package vn.edu.vnuk.record.mvc.action.contact;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import vn.edu.vnuk.record.mvc.action.Action;
 import vn.edu.vnuk.record.mvc.dao.ContactDao;
-import vn.edu.vnuk.record.mvc.model.Contact;
 
 /**
  *
@@ -21,16 +22,16 @@ public class Delete implements Action {
     @Override
     public String run(HttpServletRequest request, HttpServletResponse response) throws Exception {
         
-        Long id = Long.parseLong(request.getParameter("id"));
-        Contact contact = new Contact();
-        contact.setId(id);
-//        Connection connection = (Connection) request.getAttribute("myConnection");
-//        ContactDao dao = new ContactDao(connection);
-        ContactDao dao = new ContactDao();
-        dao.delete(contact);
+        ContactDao dao = new ContactDao((Connection) request.getAttribute("myConnection"));
+        
+        dao.delete(
+        	dao.read(Long.parseLong(request.getParameter("id")))
+        );
+        
         System.out.println("Deleting contact ... ");
-        return "mvc?logic=contact.Index";
-        //return "read-contacts.jsp";
+        
+        request.setAttribute("contacts", dao.read());
+        return "/WEB-INF/jsp/contact/index.jsp";
         
     }
     
