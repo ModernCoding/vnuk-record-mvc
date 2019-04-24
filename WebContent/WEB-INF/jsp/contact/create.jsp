@@ -12,10 +12,10 @@
         <hr />
 
         <form action="addContact" method="post">
-            <vnuk:myInput param_name="name" id="name" label="Name: " />
-            <vnuk:myInput param_name="email" id="email" label="E-mail: " />
-            <vnuk:myInput param_name="address" id="address" label="Address: " />
-            <vnuk:myInput param_name="date_of_birth" id="date-of-birth" label="Date of birth: " />
+            <vnuk:input name="name" id="name" label="Name: " />
+            <vnuk:input name="email" id="email" label="E-mail: " />
+            <vnuk:input name="address" id="address" label="Address: " />
+            <vnuk:input name="date_of_birth" id="date-of-birth" label="Date of birth: " />
             
             <a href="mvc?action=contact.Index" class="btn btn-light">Back to list</a>
             <input type="submit" value="Save" class="btn btn-success" />

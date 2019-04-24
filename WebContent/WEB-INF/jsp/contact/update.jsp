@@ -15,9 +15,9 @@
         <form action="updateContact" method="post">
             <div>Id: ${contact.id}</div>
             <input type="hidden" name="id" value="${contact.id}" />
-            <vnuk:myInput param_name="name" id="name" label="Name: " value="${contact.name}" />
-            <vnuk:myInput param_name="email" id="email" label="E-mail: " value="${contact.email}" />
-            <vnuk:myInput param_name="address" id="address" label="Address: " value="${contact.address}" />
+            <vnuk:input name="name" id="name" label="Name: " value="${contact.name}" />
+            <vnuk:input name="email" id="email" label="E-mail: " value="${contact.email}" />
+            <vnuk:input name="address" id="address" label="Address: " value="${contact.address}" />
             
 			<div>
 				<label for="date-of-birth">Date of birth: </label>

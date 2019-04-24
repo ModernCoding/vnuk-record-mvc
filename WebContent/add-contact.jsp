@@ -37,7 +37,7 @@
             	<input type="text" name="address" id="address">
             </div>
             
-            <vnuk:myDateField param_name="date_of_birth" id="date-of-birth" label="Date of birth: " />
+            <vnuk:dateField name="date_of_birth" id="date-of-birth" label="Date of birth: " />
             
             
             <input type="submit" value="Save" />

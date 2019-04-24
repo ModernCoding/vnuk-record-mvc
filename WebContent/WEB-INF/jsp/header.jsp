@@ -1,4 +1,7 @@
-<div class="my-margin-bottom-40">
+<header class="my-padding-bottom-19 my-border-bottom">
 	<img src="images/banner.jpg" class="my-margin-bottom-19" />
-	<h2>My contacts</h2>
-</div>
+	
+	<h2>
+		<strong>My contacts</strong>
+	</h2>
+</header>
